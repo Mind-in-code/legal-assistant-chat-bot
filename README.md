@@ -26,8 +26,9 @@ ollama pull llama3
 ollama pull llama3.2:3b
    Project Structure
 legal-assistant/
+
 │── index.html        ← Frontend
-│── main.py           ← FastAPI backend
+│── main.py           ← backend
 │── .venv/            ← Python virtual environment (optional)
 │── README.md         ← You are reading this :)
 You only need index.html and main.py.
@@ -68,7 +69,3 @@ Since it runs locally via Ollama, no API key is needed.
 
  Done!
 You can now type questions in the frontend and get answers from your local Llama model.
-
- Credits
-Created by Anushka Vora, Bhawika Arora, Palak Soni
-AI logic powered by Ollama Llama 3
