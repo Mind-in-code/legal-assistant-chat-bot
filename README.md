@@ -1,71 +1,91 @@
 Legal Assistant — Local AI Chatbot (Ollama + FastAPI)
-This project is a simple legal‑awareness chatbot using:
+A simple legal‑awareness chatbot that runs fully offline using:
 
 FastAPI backend
-
 HTML/CSS/JS frontend
+Ollama (local AI models)
+No API keys
+No internet required after setup
 
-Ollama Llama 3 model (local AI, no API key needed)
-
-The chatbot runs 100% locally — NO API keys required.
-
-Requirements
-Before running this project, install:
+Requirements (Install these before running)
 
 1. Python 3.10+
-Download from: https://www.python.org
+Download from: https://www.python.org/downloads/
+( Make sure to check “Add Python to PATH” during installation)
 
-2. Ollama
-Download from: https://ollama.com
+2. Ollama (Local AI engine)
+Download from: https://ollama.com/download
 
 After installing Ollama, download a model:
-
+Recommended (best quality):
 ollama pull llama3
-(Or smaller model)
-
+Small model (if low storage):
 ollama pull llama3.2:3b
-   Project Structure
+
+ Project Structure
 legal-assistant/
-
 │── index.html        ← Frontend
-│── main.py           ← backend
-│── .venv/            ← Python virtual environment (optional)
-│── README.md         ← You are reading this :)
-You only need index.html and main.py.
+│── main.py           ← Backend
+│── README.md         ← Documentation
+│── .venv/            ← Virtual environment (DO NOT upload)
+You only need index.html and main.py to run the project.
 
-The .venv folder does NOT need to be shared unless required.
-
-Installation Steps
-1. Create a Virtual Environment
+ Installation Steps
+1. Create a virtual environment
 (optional but recommended)
-
 python -m venv .venv
+
 Activate it:
 
 Windows:
-
 .venv\Scripts\activate
+
+Mac/Linux:
+source .venv/bin/activate
+
 2. Install dependencies
 pip install fastapi uvicorn openai
-3. Start Ollama
-Ollama runs automatically in background, but if not:
+(The “openai” package is used only as a client. You are NOT using OpenAI API.)
 
+3. Start Ollama
+(Ollama normally runs automatically)
+
+If needed:
 ollama serve
+
 4. Run the backend
 uvicorn main:app --reload
-Backend runs at:
 
-👉 http://127.0.0.1:8000
+Your backend is now running at:
+http://127.0.0.1:8000
 
-   Frontend (index.html)
-Right‑click → "Open with Live Server"
-(or open it directly in your browser)
+Frontend (index.html)
+Open it in your browser.
 
-   The AI Model
-This uses:
+If using VS Code:
+Right‑click → Open with Live Server
 
+AI Model Used
+The backend loads:
 model = "llama3"
-Since it runs locally via Ollama, no API key is needed.
+Since Ollama runs locally:
+No API keys needed
+No internet needed
+100% private
 
- Done!
-You can now type questions in the frontend and get answers from your local Llama model.
+Troubleshooting:
+
+Backend doesn’t start?
+Run:
+pip install fastapi uvicorn openai
+
+Model not found?
+Run:
+ollama pull llama3
+
+Frontend not connecting?
+Check that your backend is running at:
+http://127.0.0.1:8000
+
+Done!
+You can now chat with your offline legal assistant.
