@@ -1,5 +1,4 @@
 from uuid import uuid4
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -22,22 +21,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
 @app.get("/")
 async def home():
     return {"message": "AI Legal Chatbot is running with Ollama."}
-
 
 # Body expected from your index.html fetch()
 class ChatRequest(BaseModel):
     sessionId: str | None = None
     message: str
 
-
 @app.post("/chat")
 async def chat_http(body: ChatRequest):
     response = client.chat.completions.create(
-        model="llama3.2:3b",
+        model="llama3.1:8b",
         temperature=0.4,           # lower = more focused, less random
         max_tokens=256,            # keep answers short and clear
         messages=[
@@ -78,8 +74,6 @@ async def chat_http(body: ChatRequest):
     ai_reply = response.choices[0].message.content
     session_id = body.sessionId or str(uuid4())
     return {"sessionId": session_id, "reply": ai_reply}
-
-
 
 @app.post("/reset-session")
 async def reset_session():
