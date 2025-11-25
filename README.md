@@ -17,10 +17,8 @@ Download from: https://www.python.org/downloads/
 Download from: https://ollama.com/download
 
 After installing Ollama, download a model:
-Recommended (best quality):
-ollama pull llama3
-Small model (if low storage):
-ollama pull llama3.2:3b
+Smart model (best quality)
+ollama pull llama3.1:8b
 
  Project Structure
 legal-assistant/
@@ -89,3 +87,4 @@ http://127.0.0.1:8000
 
 Done!
 You can now chat with your offline legal assistant.
+
