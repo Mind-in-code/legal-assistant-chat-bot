@@ -151,29 +151,41 @@
     }
 
     .msg-bubble-user {
-      max-width: 580px;
-      margin-left: auto;
-      border-radius: 18px;
-      padding: 12px 14px;
-      background: #374151;
-      color: #f9fafb;
-      font-size: 14px;
-      line-height: 1.4;
-      white-space: pre-wrap;   /* 👈 add this line */
+  max-width: 580px;
+  margin-left: auto;
+  border-radius: 18px;
+  padding: 12px 14px;
+  background: #374151;
+  color: #f9fafb;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+
+  /* ⭐ Neon Blue–Purple Glow */
+  border: 1px solid #a855f7;
+  box-shadow:
+      0 0 8px #a855f7,
+      0 0 18px #b26bff,
+      0 0 26px #d8b4fe66;
+
     }
 
     .msg-bubble-assistant {
-      max-width: 650px;
-      border-radius: 18px;
-     padding: 16px 16px 14px;
-     background: var(--surface-elevated);
-     border: 1px solid #27272f;
-     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
-     font-size: 14px;
-     line-height: 1.5;
-     white-space: pre-wrap;   /* 👈 add this line */
-}
+  max-width: 650px;
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  background: #0f172a;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
 
+  /* ⭐ Neon Blue–Green Glow */
+  border: 1px solid #00eaff;
+  box-shadow:
+      0 0 8px #00eaff,
+      0 0 18px #00f2ff,
+      0 0 26px #00eaff88;
+}
 
     .msg-bubble-assistant h2 {
       margin: 4px 0 6px;
@@ -386,6 +398,7 @@
   </style>
 </head>
 <body>
+  
   <div class="app-shell">
     <header class="top-bar">
       <div class="logo-wrap">
