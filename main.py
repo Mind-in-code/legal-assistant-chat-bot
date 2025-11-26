@@ -86,7 +86,7 @@ def run_safety_agent(user_text: str) -> str:
     )
 
     resp = client.chat.completions.create(
-        model="llama3.1:8b",
+        model="llama3.2:3b",
         temperature=0.0,
         max_tokens=32,
         messages=[
@@ -231,3 +231,4 @@ async def resume_session(body: SessionOp):
     state = get_state(body.sessionId)
     state["paused"] = False
     return {"status": "resumed"}
+
