@@ -140,7 +140,7 @@ def run_legal_agent(session_id: str, user_text: str, safety_note: str | None) ->
     messages.append({"role": "user", "content": user_text})
 
     resp = client.chat.completions.create(
-        model="llama3.1:8b",
+        model="llama3.2:3b",
         temperature=0.4,
         max_tokens=256,
         messages=messages,
@@ -231,4 +231,5 @@ async def resume_session(body: SessionOp):
     state = get_state(body.sessionId)
     state["paused"] = False
     return {"status": "resumed"}
+
 
