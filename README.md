@@ -32,7 +32,7 @@ Smaller / faster alternatives
 ollama pull llama3.2:3b (There in the code)
 ollama pull phi3
 
-📁 Project Structure
+Project Structure:
 legal-assistant/
 │── index.html       ← Frontend  
 │── main.py          ← Backend  
@@ -40,7 +40,7 @@ legal-assistant/
 │── .venv/           ← Virtual environment (DO NOT upload)
 You only need index.html and main.py to run the app.
 
-⚙️ Installation & Setup
+Installation & Setup:
 1. Create a virtual environment (optional but recommended)
 python -m venv .venv
 
@@ -72,7 +72,7 @@ Open index.html in any browser.
 If you use VS Code:
 Right‑click → Open with Live Server
 
-🤖 AI Model Used
+AI Model Used:
 The backend loads:
 model = "llama3.1:8b"
 
@@ -98,3 +98,4 @@ http://127.0.0.1:8000
 
 You're all set!
 You can now chat with your offline Legal Awareness Assistant.
+
